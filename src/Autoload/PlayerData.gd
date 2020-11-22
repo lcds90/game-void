@@ -2,7 +2,7 @@ extends Node
 
 
 signal updated
-signal died
+signal died	
 signal killed
 
 var score: = 0 setget set_score
