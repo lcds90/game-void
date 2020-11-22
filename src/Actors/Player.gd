@@ -1,8 +1,6 @@
 extends Actor
 
-
 export var stomp_impulse: = 600.0	
-
 var alive = true
 
 func _on_StompDetector_area_entered(area: Area2D) -> void:
