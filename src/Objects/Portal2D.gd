@@ -11,7 +11,7 @@ func _on_body_entered(body: PhysicsBody2D):
 
 
 func _get_configuration_warning() -> String:
-	return "The property Next Level can't be empty" if not next_scene else ""
+	return "Proxima cena nao pode ficar vazia" if not next_scene else ""
 
 
 func teleport() -> void:

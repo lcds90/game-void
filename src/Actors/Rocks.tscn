@@ -16,7 +16,6 @@ extents = Vector2( 40, 10.5328 )
 collision_layer = 4
 collision_mask = 4
 script = ExtResource( 1 )
-speed = Vector2( 400, 800 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -32.9412 )
@@ -31,7 +30,8 @@ position = Vector2( -2, -36 )
 shape = SubResource( 2 )
 
 [node name="StompArea2D" type="Area2D" parent="."]
-position = Vector2( 0, -66.4549 )
+position = Vector2( 2.62202, -22.6294 )
+scale = Vector2( 1.19929, 2.73446 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea2D"]
