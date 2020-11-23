@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/Screens/EndScreen.gd" type="Script" id=2]
-[ext_resource path="res://assets/background.png" type="Texture" id=3]
+[ext_resource path="res://assets/galaxy.jpg" type="Texture" id=3]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sound/menu.ogg" type="AudioStream" id=6]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=7]
 
 [node name="EndScreen" type="Control"]
@@ -17,12 +18,13 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.192157, 0.192157, 0.192157, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -66.5956
-margin_top = -38.0546
+margin_top = -34.691
 margin_right = -66.5956
-margin_bottom = -38.0546
+margin_bottom = -34.691
 rect_scale = Vector2( 1.12666, 1.12666 )
 texture = ExtResource( 3 )
 expand = true
@@ -31,36 +33,69 @@ __meta__ = {
 }
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
-text = "Você finalizou o jogo!"
+anchor_right = 0.0
+margin_right = 1217.0
+text = "Jogo finalizado, parabéns!"
 
 [node name="Result" type="Label" parent="."]
 anchor_right = 1.0
-margin_top = 230.0
-margin_bottom = 400.0
+margin_left = 130.059
+margin_top = 471.01
+margin_right = -888.941
+margin_bottom = 641.01
 text = "Pontuação: %s
 Inimigos mortos: %s
 Mortes: %s"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Menu" type="VBoxContainer" parent="."]
+[node name="Creditos" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -180.0
-margin_top = -75.0
-margin_right = 180.0
-margin_bottom = 79.0
+margin_left = 220.994
+margin_top = 353.047
+margin_right = 829.994
+margin_bottom = 486.047
+text = "Criadores:
+Leonardo Santos - Programação / Trilha Sonora
+Stefani Padilha - Conceito / Sprites / Level Design
+Leonardo Brabo - Programação"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 400.267
+margin_top = -284.314
+margin_right = 760.267
+margin_bottom = -130.314
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 5 )]
+modulate = Color( 0.494118, 0, 0, 0.694118 )
 margin_right = 360.0
 margin_bottom = 73.0
-text = "Jogar Novamente"
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Jogar"
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 7 )]
+modulate = Color( 0.494118, 0, 0, 0.694118 )
 margin_top = 81.0
 margin_right = 360.0
 margin_bottom = 154.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sair"
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Objects/Portal2D.gd" type="Script" id=1]
-[ext_resource path="res://assets/portal.png" type="Texture" id=2]
+[ext_resource path="res://assets/portal2.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 83.0
@@ -9,7 +9,6 @@ height = 93.4486
 
 [sub_resource type="Animation" id=2]
 resource_name = "START"
-length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("TransitionLayer/ColorRect:color")
 tracks/0/interp = 1
@@ -21,6 +20,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=3]
